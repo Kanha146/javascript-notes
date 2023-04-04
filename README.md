@@ -108,3 +108,34 @@ Homework:
     return true;
     // return false;
     } 
+    
+    
+Polyfill  :A polyfill is a piece of code (usually JavaScript on the Web) used to provide modern functionality on older browsers that do not natively support it.
+
+          
+      let name= {
+        firstname:"akshay",
+        lastname:"saini"
+      }
+      
+      let printNamr=function(hometown,state,country){
+      console.log(this.firstname+" "+this.lastname +","+ hometown +","+ country+","+ country)
+    }
+    
+    let printMyName=prinName.bind(name,"varanasi","up");
+    printMyName("India");
+    
+    
+ here we make own bind function---
+     Function.prototype.mybind=function(...args){
+      let obj=this,
+       params=args.slice(1);
+      return function(...args2){
+        obj.apply(args[0],[...params,...args2]);  // here use array to pass more obj.
+      
+     }
+     }
+     
+     let printmyName2=printName.mybind(name,"vns","up");
+     pritMyName("India");
+
