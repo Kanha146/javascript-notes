@@ -138,4 +138,33 @@ Polyfill  :A polyfill is a piece of code (usually JavaScript on the Web) used to
      
      let printmyName2=printName.mybind(name,"vns","up");
      pritMyName("India");
+     
+     
+     
+     
+ // map, filter and reduce.
+// What is map() ?
+const nums = [1, 2, 3, 4];
+const multiplyThree = nums.map((num, i, arr) => {
+return num * 3;
+});
+console.log(multiplyThree);   
+
+
+
+// Polyfill for filter()
+Array.prototype.myFilter function (cb) {
+let temp = [];
+for (let i = 0; i < this.length; i++) {
+if (cb(this[1], i, this)) temp.push(this[i]);
+}
+return temp;
+};
+const nums = [1, 2, 3, 4];
+const more Than Two = nums.filter ((num) => {
+return num > 2;
+});
+console.log(more ThanTwo);
+     
+     
 
